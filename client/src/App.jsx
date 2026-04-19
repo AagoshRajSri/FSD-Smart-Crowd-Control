@@ -1,33 +1,54 @@
-import { useEffect, useState } from 'react';
-import io from 'socket.io-client';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { AuthProvider, useAuth } from './contexts/AuthContext';
+import { SocketProvider } from './contexts/SocketContext';
+import Dashboard from './pages/Dashboard';
+import GuardManagement from './pages/GuardManagement';
+import EventBuilder from './pages/EventBuilder';
+import Analytics from './pages/Analytics';
+import Login from './pages/Login';
+import './index.css';
 
-const socket = io('http://localhost:5000');
+const ProtectedRoute = ({ children }) => {
+  const { user } = useAuth();
+  if (!user) {
+    return <Navigate to="/login" replace />;
+  }
+  return children;
+};
+
+const AppContent = () => {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route 
+          path="/*" 
+          element={
+            <ProtectedRoute>
+              <SocketProvider>
+                <Routes>
+                  <Route path="/" element={<Dashboard />} />
+                  <Route path="/guards" element={<GuardManagement />} />
+                  <Route path="/builder" element={<EventBuilder />} />
+                  <Route path="/builder/:eventId" element={<EventBuilder />} />
+                  <Route path="/analytics" element={<Analytics />} />
+                  <Route path="*" element={<Navigate to="/" replace />} />
+                </Routes>
+              </SocketProvider>
+            </ProtectedRoute>
+          } 
+        />
+      </Routes>
+    </Router>
+  );
+};
 
 function App() {
-  const [zones, setZones] = useState([]);
-  const [alert, setAlert] = useState('');
-
-  useEffect(() => {
-    socket.on('zoneUpdate', setZones);
-    socket.on('alert', (data) => {
-      setAlert(data.message);
-      setTimeout(() => setAlert(''), 3000);
-    });
-  }, []);
-
   return (
-    <div style={{ padding: 20 }}>
-      <h1>Smart Crowd Dashboard</h1>
-
-      {alert && <p style={{ color: 'red' }}>{alert}</p>}
-
-      {zones.map((z, i) => (
-        <div key={i}>
-          <h3>{z.name}</h3>
-          <p>{z.count}</p>
-        </div>
-      ))}
-    </div>
+    <AuthProvider>
+      <AppContent />
+    </AuthProvider>
   );
 }
 
