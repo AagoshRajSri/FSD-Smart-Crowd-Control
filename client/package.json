@@ -1,10 +1,30 @@
 {
   "name": "client",
   "version": "1.0.0",
-  "scripts": { "dev": "vite" },
+  "scripts": {
+    "dev": "vite"
+  },
   "dependencies": {
+    "@deck.gl/layers": "^9.3.1",
+    "@deck.gl/react": "^9.3.1",
+    "date-fns": "^4.1.0",
+    "deck.gl": "^9.3.1",
+    "lucide-react": "^1.8.0",
+    "maplibre-gl": "^5.23.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "socket.io-client": "^4.7.2"
+    "react-map-gl": "^8.1.1",
+    "react-router-dom": "^7.14.1",
+    "recharts": "^3.8.1",
+    "socket.io-client": "^4.7.2",
+    "zustand": "^5.0.12"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.2.2",
+    "@vitejs/plugin-react": "^6.0.1",
+    "autoprefixer": "^10.5.0",
+    "postcss": "^8.5.10",
+    "tailwindcss": "^3.4.19",
+    "vite": "^8.0.8"
   }
 }
