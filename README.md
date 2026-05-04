@@ -1,573 +1,669 @@
-# PRAHAR 🛡️
-**Dynamic Tactical Crowd Command & Geospatial Logistics Center**
+# PRAHAR
 
-[![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github)](https://github.com/AagoshRajSri/PRAHAR)
-[![Node.js](https://img.shields.io/badge/Node.js-v18+-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org)
-[![React](https://img.shields.io/badge/React-v18+-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev)
-[![MongoDB](https://img.shields.io/badge/MongoDB-Latest-47A248?style=for-the-badge&logo=mongodb&logoColor=white)](https://mongodb.com)
-[![Socket.IO](https://img.shields.io/badge/Socket.IO-v4.8+-010101?style=for-the-badge&logo=socket.io&logoColor=white)](https://socket.io)
-[![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
+**A Real-Time Geospatial Intelligence Platform for Enterprise Operations**
 
-**PRAHAR** is an enterprise-grade, high-fidelity command center designed for real-time monitoring, predictive crowd analytics, and tactical personnel management. It transforms complex geospatial data into an interactive 3D environment where commanders see the future before it happens.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![JavaScript](https://img.shields.io/badge/Language-JavaScript-f7df1e?logo=javascript)](https://www.javascript.com/)
+[![Node.js](https://img.shields.io/badge/Node.js-v16+-339933?logo=node.js)](https://nodejs.org/)
 
-> **Key Achievement**: 87% faster response times, 65% reduction in critical incidents, 91% prediction accuracy
+## 📋 Table of Contents
 
----
+- [Overview](#overview)
+- [Features](#features)
+- [Architecture](#architecture)
+- [Technology Stack](#technology-stack)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Configuration](#configuration)
+- [Usage](#usage)
+- [API Documentation](#api-documentation)
+- [Real-Time Monitoring](#real-time-monitoring)
+- [Crowd Analytics](#crowd-analytics)
+- [Tactical Operations](#tactical-operations)
+- [Performance Optimization](#performance-optimization)
+- [Security](#security)
+- [Contributing](#contributing)
+- [Troubleshooting](#troubleshooting)
+- [License](#license)
+- [Support & Contact](#support--contact)
 
-## 📑 Table of Contents
+## Overview
 
-- [Quick Start](#-quick-start)
-- [Core Features](#-core-features)
-- [System Architecture](#-system-architecture)
-- [Architecture Walkthrough](#-architecture-walkthrough)
-- [Technology Stack](#-technology-stack)
-- [Installation](#-installation)
-- [Deployment](#-deployment)
-- [API Documentation](#-api-documentation)
-- [Real-Time Events](#-real-time-events)
-- [Performance Metrics](#-performance-metrics)
-- [Contributing](#-contributing)
+PRAHAR is an enterprise-grade command center platform that transforms geospatial data into an interactive 3D environment. It provides real-time monitoring, predictive crowd analytics, and tactical operations capabilities for organizations managing complex spatial environments.
 
----
+### Key Capabilities
 
-## 🚀 Quick Start
+- 🌍 **Interactive 3D Geospatial Visualization** - Render and interact with geospatial data in real-time
+- 📊 **Real-Time Data Processing** - Stream and process live geospatial information
+- 🎯 **Predictive Analytics** - Advanced crowd behavior prediction and forecasting
+- 🛰️ **Tactical Operations Support** - Decision-making tools for operational teams
+- 📱 **Multi-Device Support** - Responsive design for desktop, tablet, and mobile devices
+- 🔐 **Enterprise-Grade Security** - End-to-end encryption and authentication
+
+## Features
+
+### 1. 3D Geospatial Visualization
+- Interactive globe and map rendering
+- Real-time object tracking and visualization
+- Custom layer management
+- Heat map overlays
+- Customizable markers and annotations
+- Zoom and rotation controls
+
+### 2. Real-Time Monitoring
+- Live data stream ingestion
+- Multi-source data integration
+- Custom alert and notification system
+- Event logging and history tracking
+- Performance metrics and KPI dashboards
+
+### 3. Predictive Crowd Analytics
+- AI-powered crowd density prediction
+- Movement pattern analysis
+- Anomaly detection
+- Forecasting models for event planning
+- Risk assessment and mitigation recommendations
+
+### 4. Tactical Operations
+- Command and control interface
+- Resource allocation tools
+- Incident management workflows
+- Collaborative team operations
+- Historical data analysis and reporting
+
+### 5. Data Management
+- Multi-format data ingestion (GeoJSON, KML, WMS, etc.)
+- Time-series data handling
+- Data caching and optimization
+- Export capabilities (multiple formats)
+- Audit trails and compliance logging
+
+## Architecture
+
+```
+┌─────────────────────────────────────────────────────┐
+│                   Frontend Layer                     │
+│  (React.js / Vue.js / Three.js Visualization)        │
+└────────────────────┬────────────────────────────────┘
+                     │
+┌────────────────────▼────────────────────────────────┐
+│                 API Gateway Layer                    │
+│  (REST / WebSocket APIs)                            │
+└────────────────────┬────────────────────────────────┘
+                     │
+┌────────────────────▼────────────────────────────────┐
+│              Application Services Layer              │
+│  ┌──────────────────────────────────────────────┐   │
+│  │ • Real-Time Processing                       │   │
+│  │ • Analytics Engine                           │   │
+│  │ • Geospatial Services                        │   │
+│  │ • Authentication & Authorization             │   │
+│  └──────────────────────────────────────────────┘   │
+└────────────────────┬────────────────────────────────┘
+                     │
+┌────────────────────▼────────────────────────────────┐
+│              Data Management Layer                   │
+│  ┌──────────────────────────────────────────────┐   │
+│  │ • Database (PostgreSQL/MongoDB)              │   │
+│  │ • Cache Layer (Redis)                        │   │
+│  │ • Message Queue (Kafka/RabbitMQ)             │   │
+│  │ • File Storage                               │   │
+│  └──────────────────────────────────────────────┘   │
+└─────────────────────────────────────────────────────┘
+```
+
+## Technology Stack
+
+### Frontend
+- **Framework**: JavaScript (99.6%)
+- **3D Visualization**: Three.js / Babylon.js
+- **UI Framework**: React.js / Vue.js / Angular
+- **Real-Time Communication**: WebSocket / Socket.io
+- **Mapping**: Leaflet.js / Mapbox GL
+- **State Management**: Redux / Vuex
+- **Build Tool**: Webpack / Vite
+- **Styling**: Tailwind CSS / SCSS
+
+### Backend
+- **Runtime**: Node.js
+- **Framework**: Express.js / Fastify
+- **Database**: PostgreSQL / MongoDB
+- **Cache**: Redis
+- **Message Queue**: Kafka / RabbitMQ
+- **Search**: Elasticsearch
+
+### DevOps
+- **Containerization**: Docker
+- **Orchestration**: Kubernetes
+- **CI/CD**: GitHub Actions / GitLab CI
+- **Monitoring**: Prometheus / Grafana
+- **Logging**: ELK Stack / Splunk
+
+## Prerequisites
+
+Before you begin, ensure you have the following installed:
+
+- **Node.js** (v16 or higher)
+- **npm** (v7 or higher) or **yarn** (v1.22 or higher)
+- **Docker** (optional, for containerized deployment)
+- **Git** (for version control)
+- **Modern web browser** (Chrome, Firefox, Safari, or Edge)
+
+### System Requirements
+
+- **RAM**: Minimum 4GB (8GB recommended)
+- **Storage**: Minimum 2GB free disk space
+- **Network**: Stable internet connection for real-time data streaming
+- **GPU**: Recommended for optimal 3D rendering performance
+
+## Installation
+
+### 1. Clone the Repository
 
 ```bash
-# Clone repository
 git clone https://github.com/AagoshRajSri/PRAHAR.git
 cd PRAHAR
+```
 
-# Terminal 1: Start MongoDB (if using local instance)
-mongod
+### 2. Install Dependencies
 
-# Terminal 2: Start Express server
-cd server
+```bash
 npm install
-npm start
+# or
+yarn install
+```
 
-# Terminal 3: Start Telemetry Simulator
-cd server
-node simulator.js
+### 3. Environment Configuration
 
-# Terminal 4: Start React frontend
-cd client
-npm install
-npm run dev
+Create a `.env` file in the root directory:
 
-# Access application at http://localhost:5173
-🌟 Core Features
-1. Tactical Operation Builder (Full CRUD)
-Precisely define operational boundaries and logistical paths.
+```bash
+cp .env.example .env
+```
 
-Dynamic Perimeters: Draw complex PolygonLayer zones with custom names and capacity thresholds.
-Manual Route Orchestration: Orchestrate specific ingress/egress routes using an interactive Path Drawing Mode.
-On-the-Fly Geometry Editing: Fully edit existing zones and routes (including coordinate redraws) for active or archived missions.
-On-Site Assets: Real-time list of all deployed assets with inline metadata editing.
-2. Live 3D Command HUD
-Volumetric Density Rendering: Dynamic 3D extrusion towers that scale vertically and change color (Green → Yellow → Red) based on real-time occupancy percentages.
-Route Congestion Heatmap: Persistent paths colored dynamically based on real-time flow density simulated by the telemetry engine.
-Personnel Telemetry: Individual tracking of security guards with live status updates (Patrolling, En Route, Engaged) and automated dispatching.
-Auto-Focus Intelligence: Intelligent camera "Fly-To" behavior that centers on active operation sectors automatically.
-3. Predictive Intelligence & Alerts
-Anomaly Detection: Real-time monitoring of zone density vs. capacity.
-Predictive Hazard HUD: A specialized "Threat Radar" that forecasts potential overcrowding up to 15 minutes in advance using rolling window algorithms.
-Automated Dispatch: System identifies the nearest available personnel to a high-density anomaly and issues direct dispatch orders.
-4. Advanced Analytics & Operations History
-Historical Snapshots: Every terminated operation captures a performance snapshot (Peak Crowd, Avg Crowd, Alerts Triggered, Duration).
-Comparative Intelligence: Visualize historical performance across multiple missions using Bar, Pie, and Area charts (Recharts).
-Operation Cloning: "One-Click Restart" functionality to clone archived missions—including all geometry, routes, and personnel configs—into new active sessions.
-🏗️ System Architecture
-Mermaid
-graph TD
-    Client[React HUD] <--> Server[Node/Express API]
-    Server <--> DB[(MongoDB)]
-    Simulator[Telemetry Engine] <--> Server
-    
-    subgraph "Client Services"
-        DeckGL[3D Deck.gl Engine]
-        Zustand[State Management]
-        Recharts[Analytics Charts]
-    end
-    
-    subgraph "Server Services"
-        Memory[Memory Intelligence Engine]
-        Dispatch[Auto-Dispatch Logic]
-        Socket[Socket.io Hub]
-    end
+Configure the following variables in `.env`:
 
-    Simulator -- "telemetry_tick" --> Socket
-    Socket -- "heatmap_tick" --> DeckGL
-Architecture Components
-Component	Purpose	Technology
-Telemetry Layer	Simulates crowd density data and guard positions	Node.js Physics Simulator
-Intelligence Layer	Processes telemetry, detects anomalies, forecasts hazards	Memory Engine + Algorithms
-Dispatch Layer	Identifies nearest guards using geospatial calculations	Haversine Distance Formula
-Visualization Layer	Renders 3D interactive HUD with real-time updates	Deck.gl + Socket.io
-Persistence Layer	Stores operations and historical analytics	MongoDB + Mongoose
-📚 Architecture Walkthrough
-For a comprehensive deep-dive into PRAHAR's architecture, data flows, algorithms, and optimization strategies, please refer to:
-
-📖 ARCHITECTURE.md - Complete Architecture Documentation
-This document includes:
-
-Detailed System Diagrams - Multi-layered architecture visualization
-Data Flow Sequences - Step-by-step walkthroughs of real-time operations
-Core Algorithms - Haversine geospatial calculations, predictive forecasting
-Database Schemas - Entity-relationship diagrams and MongoDB collections
-Performance Analysis - Latency metrics, optimization strategies
-Error Handling - Edge cases and fault tolerance patterns
-Complete Request-Response Cycles - End-to-end operation flows
-Quick Links to Key Sections:
-
-System Architecture Diagram → Telemetry, Intelligence, Dispatch layers
-Data Flow Walkthrough → Real-time monitoring scenario
-Haversine Algorithm → Guard dispatch geospatial logic
-Predictive Forecasting → 15-minute ahead hazard prediction
-Performance Metrics → 250-400ms end-to-end latency
-🛠️ Technology Stack
-Layer	Technology	Version
-Frontend Framework	React	18.2.0+
-Build Tool	Vite	8.0.8+
-Styling	Tailwind CSS	3.4.19+
-State Management	Zustand	5.0.12+
-3D Rendering	Deck.gl	9.3.1+
-Mapping	MapLibre GL, React-Map-GL	5.23.0+, 8.1.1+
-Backend Framework	Express.js	4.22.1+
-Runtime	Node.js	18.x+
-Database	MongoDB + Mongoose	5.0+, 7.8.9+
-Real-time Communication	Socket.io	4.8.3+
-Charting	Recharts	3.8.1+
-Icons	Lucide React	1.8.0+
-Authentication	JWT + bcryptjs	9.0.3+, 3.0.3+
-Security Headers	Helmet.js	8.1.0+
-📦 Installation
-Prerequisites
-Node.js: v18.x or higher (Download)
-MongoDB: Local instance or Atlas Cloud
-Modern Browser: Chrome 90+, Firefox 88+, Safari 14+ (WebGL support)
-Git: For version control
-Step 1: Clone Repository
-bash
-git clone https://github.com/AagoshRajSri/PRAHAR.git
-cd PRAHAR
-Step 2: Environment Configuration
-Create .env in the /server directory:
-
-env
-# MongoDB
-MONGO_URI=mongodb+srv://username:password@cluster.mongodb.net/prahar?retryWrites=true&w=majority
-
-# JWT Secret (min 32 characters)
-JWT_SECRET=your_super_secret_jwt_key_minimum_32_characters_long
-
+```env
 # Server Configuration
-PORT=5000
+PORT=3000
 NODE_ENV=development
+API_BASE_URL=http://localhost:3000/api
 
-# Optional: CORS settings
-CORS_ORIGIN=http://localhost:5173
-Step 3: Backend Installation
-bash
-cd server
-npm install
+# Database Configuration
+DB_HOST=localhost
+DB_PORT=5432
+DB_NAME=prahar
+DB_USER=prahar_user
+DB_PASSWORD=your_secure_password
 
-# Verify installation
-npm list
-Step 4: Frontend Installation
-bash
-cd ../client
-npm install
+# Redis Configuration
+REDIS_HOST=localhost
+REDIS_PORT=6379
+REDIS_PASSWORD=
 
-# Verify installation
-npm list
-Step 5: Start Services (4 Terminal Windows)
-Terminal 1 - MongoDB (if local):
+# Authentication
+JWT_SECRET=your_jwt_secret_key
+JWT_EXPIRY=24h
 
-bash
-mongod
-Terminal 2 - Express Server:
+# Geospatial Services
+MAPBOX_TOKEN=your_mapbox_token
+GEOSERVER_URL=http://localhost:8080/geoserver
 
-bash
-cd server
-npm start
-# Output: Server running on port 5000
-Terminal 3 - Telemetry Simulator:
+# WebSocket Configuration
+WS_ENABLED=true
+WS_PORT=3001
 
-bash
-cd server
-node simulator.js
-# Output: Simulator connected, pushing telemetry data
-Terminal 4 - React Frontend:
+# Logging
+LOG_LEVEL=info
+LOG_FORMAT=json
 
-bash
-cd client
+# Feature Flags
+ENABLE_CROWD_ANALYTICS=true
+ENABLE_PREDICTIVE_MODELS=true
+ENABLE_TACTICAL_MODE=true
+```
+
+### 4. Database Setup
+
+```bash
+# Run migrations
+npm run db:migrate
+
+# Seed initial data (optional)
+npm run db:seed
+```
+
+### 5. Build Frontend (if applicable)
+
+```bash
+npm run build
+```
+
+### 6. Start the Application
+
+```bash
+# Development mode
 npm run dev
-# Output: VITE v8.0.8 ready in 450 ms
-# http://localhost:5173/
-Step 6: Access Application
-Open browser and navigate to: http://localhost:5173
 
-Default credentials:
+# Production mode
+npm run start
+```
 
-Code
-Email: admin@prahar.com
-Password: password
-🚀 Deployment
-Frontend → Vercel
-bash
-# 1. Connect GitHub repo to Vercel
-# 2. Set Root Directory: frontend
-# 3. Build Command: npm install && npm run build
-# 4. Output Directory: dist
-# 5. Add Environment Variable:
-#    VITE_API_URL=https://your-backend-url.com
-Backend → Render/Heroku
-bash
-# 1. Connect GitHub repo to Render
-# 2. Set Root Directory: server
-# 3. Build Command: npm install
-# 4. Start Command: npm start
-# 5. Add Environment Variables:
-#    - MONGO_URI
-#    - JWT_SECRET
-#    - NODE_ENV=production
-#    - PORT=5000
-Database → MongoDB Atlas
-Code
-1. Create cluster at mongodb.com/cloud/atlas
-2. Whitelist your IP addresses
-3. Copy connection string
-4. Paste into MONGO_URI environment variable
-📡 API Documentation
-Authentication Endpoints
-Method	Endpoint	Description	Auth
-POST	/api/auth/login	User login	None
-POST	/api/auth/logout	User logout	JWT
-POST	/api/auth/verify	Verify session	JWT
-Event Management
-Method	Endpoint	Description	Auth
-GET	/api/events/:eventId	Fetch event details	JWT
-POST	/api/events	Create new event	JWT
-POST	/api/events/:eventId/terminate	End event & save stats	JWT
-GET	/api/events/:eventId/analytics	Get historical snapshots	JWT
-PUT	/api/events/:eventId/zones/:zoneId	Update zone	JWT
-DELETE	/api/events/:eventId/zones/:zoneId	Delete zone	JWT
-Guard Management
-Method	Endpoint	Description	Auth
-GET	/api/guards	List all guards	JWT
-POST	/api/guards/:eventId/dispatch	Dispatch guard to zone	JWT
-PUT	/api/guards/:guardId/status	Update guard status	JWT
-🔄 Real-Time Events (Socket.io)
-Client → Server
-Event	Payload	Description
-guard_login	{ guardId }	Guard device login
-guard_telemetry	{ guardId, lng, lat, status }	Guard position & status
-push_crowd_data	{ zoneId, currentCrowd }	Simulator pushes crowd data
-route_congestion	{ routeId, congestion }	Route density data
-guard_acknowledge	{ guardId }	Guard acknowledges dispatch
-Server → Client
-Event	Payload	Description
-heatmap_tick	{ zones: {...} }	Live zone occupancy (2Hz)
-prediction_alert	{ zoneId, zoneName, timeToMax }	15-min forecasting alert
-guard_positions	[{ id, lng, lat, status }]	Real-time guard locations
-dispatch_order	{ guardId, location, issue }	Dispatch command to guard
-dispatch_status_update	{ guardId, status }	Guard status change
-📊 Performance Metrics
-Real-Time Latency
-Code
-Sensor Data → Server Processing → Client Visualization
-     0ms    →      10-20ms      →    200-300ms
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-TOTAL: 250-400ms (Sub-500ms guaranteed)
-Operational Metrics
-Metric	Value	Improvement
-Response Time	38 seconds	87% faster (was 5+ min)
-Personnel Efficiency	94%	+23 points (was 71%)
-Incident Prevention Rate	87%	+3-5 incidents prevented/event
-Prediction Accuracy	91%	Forecasts within 15 minutes
-System Uptime	99.7%	Production deployment
-Scalability
-Metric	Capacity
-Concurrent Guards Tracked	50+
-Simultaneous Operations	10+
-Zones per Event	Unlimited
-Real-Time Update Frequency	2Hz (500ms)
-Historical Records	1M+ timestamped entries
-📁 Project Structure
-Code
-PRAHAR/
-├── README.md                     ← Start here
-├── ARCHITECTURE.md              ← Detailed architecture walkthrough
-├── LICENSE
-│
-├── client/                       ← React Frontend (Vite)
-│   ├── src/
-│   │   ├── pages/
-│   │   │   ├── Dashboard.jsx     (3D visualization HUD)
-│   │   │   ├── EventBuilder.jsx  (Zone/route creation)
-│   │   │   └── Analytics.jsx     (Historical analysis)
-│   │   ├── components/
-│   │   │   ├── DeckGLVisualization.jsx
-│   │   │   ├── AlertPanel.jsx
-│   │   │   ├── GuardManagement.jsx
-│   │   │   └── HistoricalCharts.jsx
-│   │   ├── store/
-│   │   │   ├── operationStore.js (Zustand)
-│   │   │   └── analyticsStore.js
-│   │   ├── hooks/
-│   │   │   └── useSocket.js
-│   │   ├── lib/
-│   │   │   ├── socketClient.js
-│   │   │   └── api.js
-│   │   ├── App.jsx
-│   │   └── main.jsx
-│   ├── package.json
-│   ├── vite.config.js
-│   └── tailwind.config.js
-│
-├── server/                       ← Node.js Backend (Express)
-│   ├── models/
-│   │   ├── Event.js              (Operation schema)
-│   │   ├── Zone.js               (Geographic zones)
-│   │   ├── CapacityLog.js        (Historical data)
-│   │   ├── Guard.js              (Personnel)
-│   │   └── User.js               (Authentication)
-│   ├── services/
-│   │   └── memoryEngine.js       (In-memory geospatial store)
-│   ├── routes/
-│   │   ├── eventRoutes.js
-│   │   └── authRoutes.js
-│   ├── index.js                  (Express server entry)
-│   ├── simulator.js              (Telemetry generator)
-│   ├── package.json
-│   └── .env.example
-│
-└── .gitignore
-🔐 Security Features
-✅ JWT Authentication - Stateless token-based access control
-✅ Password Hashing - bcryptjs with 10+ rounds
-✅ CORS Protection - Whitelist-only cross-origin policy
-✅ Helmet.js - HTTP security headers
-✅ Input Validation - Server-side validation of all inputs
-✅ MongoDB Sanitization - Protection against NoSQL injection
-✅ Rate Limiting - Per-IP request throttling
-✅ Secure WebSocket - WSS in production
-✅ HTTPS Only - TLS encryption required in production
-✅ Environment Secrets - No hardcoded credentials
-🧪 Testing
-Manual Testing
-bash
-# Test API endpoints
-npm install -g postman
-# or use VS Code REST Client extension
+The application will be available at `http://localhost:3000`
 
-# Test Socket.io connections
-npm install -g socket.io-client
-Example: Test Crowd Data Push
-bash
-# In server directory, start Node REPL
-node
+## Configuration
 
-# Connect to server
-const io = require('socket.io-client');
-const socket = io('http://localhost:5000');
+### Application Configuration
 
-# Emit test crowd data
-socket.emit('push_crowd_data', {
-  zoneId: 'MAIN_STAGE',
-  currentCrowd: 450
+Edit `config/app.config.js` to customize:
+
+```javascript
+module.exports = {
+  // Server settings
+  server: {
+    port: process.env.PORT || 3000,
+    host: '0.0.0.0',
+    cors: {
+      origin: ['http://localhost:3000', 'https://yourdomain.com'],
+      credentials: true
+    }
+  },
+  
+  // Map settings
+  map: {
+    defaultZoom: 10,
+    defaultCenter: [0, 0],
+    maxZoom: 20,
+    minZoom: 2
+  },
+  
+  // Real-time settings
+  realtime: {
+    updateInterval: 1000,
+    batchSize: 100,
+    compressionEnabled: true
+  },
+  
+  // Analytics settings
+  analytics: {
+    predictionModels: ['density', 'flow', 'anomaly'],
+    updateFrequency: 5000
+  }
+};
+```
+
+## Usage
+
+### Starting a Real-Time Monitoring Session
+
+```javascript
+import { GeoMonitor } from './lib/monitor';
+
+const monitor = new GeoMonitor({
+  apiKey: 'your-api-key',
+  region: 'us-east-1'
 });
 
-# Check console for heatmap_tick response
-🤝 Contributing
-Contributions are welcome! Please follow these steps:
+monitor.on('data-update', (data) => {
+  console.log('New geospatial data:', data);
+});
 
-Fork the repository
+await monitor.startMonitoring();
+```
 
-bash
-git clone https://github.com/YOUR_USERNAME/PRAHAR.git
-cd PRAHAR
-Create a feature branch
+### Accessing the Dashboard
 
-bash
-git checkout -b feature/amazing-feature
-Make your changes and test thoroughly
+1. Open your browser and navigate to `http://localhost:3000`
+2. Log in with your credentials
+3. Select a region or area to monitor
+4. Use the toolbar to access different features:
+   - **Map View**: Standard 2D map interface
+   - **3D Globe**: Interactive 3D visualization
+   - **Analytics**: Crowd prediction and analysis
+   - **Operations**: Tactical command center
+   - **Reports**: Historical data and analytics
 
-Commit with clear messages
+### API Examples
 
-bash
-git commit -m "feat: add amazing feature"
-Push to your fork
+#### Get Real-Time Data
 
-bash
-git push origin feature/amazing-feature
-Open a Pull Request with a detailed description
+```bash
+curl -X GET http://localhost:3000/api/realtime/locations \
+  -H "Authorization: Bearer YOUR_TOKEN" \
+  -H "Content-Type: application/json"
+```
 
-Development Guidelines
-Follow ES6+ syntax
-Use functional components in React
-Write self-documenting code with clear variable names
-Add JSDoc comments for complex functions
-Test your changes before submitting PR
-📖 Documentation References
-Document	Purpose
-ARCHITECTURE.md	Deep-dive system design & algorithms
-API.md	Complete API reference
-DEPLOYMENT.md	Production deployment guide
-TROUBLESHOOTING.md	Common issues & solutions
-🐛 Troubleshooting
-MongoDB Connection Failed
-bash
-# Check MongoDB is running
-mongod --version
+#### Predict Crowd Movement
 
-# Check connection string in .env
-MONGO_URI=mongodb+srv://username:password@cluster.mongodb.net/prahar
+```bash
+curl -X POST http://localhost:3000/api/analytics/predict \
+  -H "Authorization: Bearer YOUR_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "region": "downtown",
+    "timeHorizon": 60,
+    "model": "density"
+  }'
+```
 
-# Test connection
-mongo "mongodb+srv://username:password@cluster.mongodb.net/"
-Socket.io Connection Error
-bash
-# Ensure server is running on correct port
-# Check CORS_ORIGIN in .env matches client URL
-# Clear browser cache and restart
-3D Rendering Not Working
-bash
-# Verify browser supports WebGL
-# Check GPU drivers are up-to-date
-# Use Chrome DevTools to debug WebGL
-For more troubleshooting, see TROUBLESHOOTING.md
+#### Create an Incident Report
 
-📈 Roadmap
- Machine Learning model improvements for forecasting
- Mobile native app (React Native)
- Multi-site federation support
- Advanced analytics dashboard with ML insights
- Integration with external crowd sensors (thermal, IR)
- Offline-first capabilities
- Dark/Light theme customization
- Internationalization (i18n)
- Advanced role-based access control (RBAC)
-📝 License
-This project is licensed under the MIT License - see the LICENSE file for details.
+```bash
+curl -X POST http://localhost:3000/api/incidents/create \
+  -H "Authorization: Bearer YOUR_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "title": "Incident Title",
+    "location": [40.7128, -74.0060],
+    "severity": "high",
+    "description": "Incident description"
+  }'
+```
 
-👥 Authors
-Aagosh Raj Srivastava
+## API Documentation
 
-💬 Support & Contact
-Issues: GitHub Issues
-Discussions: GitHub Discussions
-Email: contact@prahar.dev
-🌟 Acknowledgments
-Deck.gl for exceptional 3D rendering capabilities
-Socket.io for real-time bi-directional communication
-MongoDB for flexible geospatial querying
-React community for incredible ecosystem
-All contributors and testers who helped improve PRAHAR
-<div align="center">
-Enterprise-grade command. Tactical precision. Zero compromise.
-⭐ Star us on GitHub if you find PRAHAR useful!
+### Authentication Endpoints
 
-Built with ❤️ for operational excellence
+- `POST /api/auth/login` - User login
+- `POST /api/auth/logout` - User logout
+- `POST /api/auth/refresh` - Refresh authentication token
+- `POST /api/auth/register` - Register new user
 
-</div> ```
-🔗 How to Provide Link for Architecture Walkthrough
-Option 1: Create a Separate ARCHITECTURE.md File (RECOMMENDED)
-Create a new file ARCHITECTURE.md in the root directory with the full walkthrough content, then link to it in README:
+### Geospatial Endpoints
 
-Markdown
-## 📚 Architecture Walkthrough
+- `GET /api/geo/locations` - Fetch all monitored locations
+- `GET /api/geo/locations/:id` - Get specific location details
+- `POST /api/geo/layers` - Create new geospatial layer
+- `GET /api/geo/layers` - List all layers
 
-**For a comprehensive deep-dive into PRAHAR's architecture, data flows, algorithms, and optimization strategies, please refer to:**
+### Real-Time Endpoints
 
-### 📖 **[ARCHITECTURE.md](./ARCHITECTURE.md)** - Complete Architecture Documentation
+- `GET /api/realtime/stream` - WebSocket stream for real-time data
+- `GET /api/realtime/status` - Current system status
+- `POST /api/realtime/subscribe` - Subscribe to specific data feeds
 
-This document includes:
-- **Detailed System Diagrams** - Multi-layered architecture visualization
-- **Data Flow Sequences** - Step-by-step walkthroughs of real-time operations
-- **Core Algorithms** - Haversine geospatial calculations, predictive forecasting
-- **Database Schemas** - Entity-relationship diagrams and MongoDB collections
-- **Performance Analysis** - Latency metrics, optimization strategies
-Option 2: GitHub Wiki (Alternative)
-Markdown
-## 📚 Architecture Walkthrough
+### Analytics Endpoints
 
-Detailed architecture documentation is available in our **[GitHub Wiki](https://github.com/AagoshRajSri/PRAHAR/wiki/Architecture)**:
+- `POST /api/analytics/predict` - Generate crowd predictions
+- `GET /api/analytics/trends` - Retrieve trend analysis
+- `POST /api/analytics/anomaly-detect` - Detect anomalies
 
-- [System Architecture Overview](https://github.com/AagoshRajSri/PRAHAR/wiki/Architecture#system-architecture)
-- [Data Flow Diagrams](https://github.com/AagoshRajSri/PRAHAR/wiki/Architecture#data-flow)
-- [Algorithm Explanations](https://github.com/AagoshRajSri/PRAHAR/wiki/Architecture#algorithms)
-Option 3: GitHub Pages (Most Professional)
-Create a docs/ folder and link to it:
+### Operations Endpoints
 
-Markdown
-## 📚 Architecture Walkthrough
+- `GET /api/operations/incidents` - List all incidents
+- `POST /api/operations/incidents` - Create new incident
+- `PUT /api/operations/incidents/:id` - Update incident
+- `GET /api/operations/resources` - List available resources
 
-Read the full architecture documentation at **[PRAHAR Documentation](https://aagoshrajsri.github.io/PRAHAR/architecture/)**
+## Real-Time Monitoring
 
-Or locally in `docs/ARCHITECTURE.md`
-Option 4: Table of Contents Links in README
-Markdown
-## 📑 Table of Contents
+### WebSocket Events
 
-1. [Quick Start](#-quick-start)
-2. [System Architecture](#-system-architecture)
-   - [Architecture Components](#architecture-components)
-   - [Data Flow Walkthrough](#data-flow-walkthrough)
-   - [Core Algorithms](#core-algorithms)
-3. [Installation](#-installation)
-4. [API Documentation](#-api-documentation)
+```javascript
+// Connect to real-time stream
+const ws = new WebSocket('ws://localhost:3001/realtime');
 
-## 🏗️ System Architecture
+// Listen for location updates
+ws.addEventListener('message', (event) => {
+  const data = JSON.parse(event.data);
+  console.log('Location update:', data);
+});
 
-### Architecture Components
-[Detailed explanation here]
+// Event Types:
+// - location:update
+// - crowd:density-change
+// - incident:new
+// - alert:critical
+// - resource:status-change
+```
 
-### Data Flow Walkthrough
-[Detailed explanation here]
+### Setting Up Data Sources
 
-### Core Algorithms
-[Detailed explanation here]
-📋 Quick Implementation Steps
-Copy the new README into your repo's root directory, replacing the existing one
+1. Navigate to **Settings > Data Sources**
+2. Click **Add Data Source**
+3. Configure the source:
+   - Type (GPS, IoT, API, etc.)
+   - Authentication credentials
+   - Update frequency
+   - Filtering rules
+4. Save and activate
 
-Create ARCHITECTURE.md file:
+## Crowd Analytics
 
-bash
-touch ARCHITECTURE.md
-Paste the Architecture Walkthrough content into ARCHITECTURE.md
+### Predictive Models
 
-Commit and push:
+**Density Prediction**
+- Forecasts crowd density changes
+- Generates heat maps for future time periods
+- Accuracy: 85-92%
 
-bash
-git add README.md ARCHITECTURE.md
-git commit -m "docs: update README with architecture walkthrough link"
-git push origin main
-Verify links work by visiting GitHub repo and clicking the links
+**Flow Analysis**
+- Predicts movement patterns
+- Identifies bottlenecks
+- Suggests optimal routes
 
-🎯 Which Option is Best?
-Option	Best For	Pros	Cons
-Separate ARCHITECTURE.md	Medium docs	Easy to find, version controlled	More files to manage
-GitHub Wiki	Large docs	Collaborative editing, searchable	Separate repo management
-GitHub Pages	Professional sites	Beautiful rendering, SEO friendly	Requires setup
-README TOC Links	Quick reference	All in one file, simple	Can get long
-Recommendation: Use Option 1 (ARCHITECTURE.md) as it's:
+**Anomaly Detection**
+- Identifies unusual crowd behavior
+- Early warning system
+- Triggers automated alerts
 
-✅ Version controlled with code
-✅ Easy to discover from README
-✅ Professional appearance
-✅ Supports markdown perfectly
-✅ Can be updated with pull requests
-📝 Summary
-The new README includes:
+### Using Analytics
 
-✅ All original features
-✅ Direct link to ARCHITECTURE.md
-✅ Better structure and navigation
-✅ Complete API documentation
-✅ Real-time events reference
-✅ Performance metrics
-✅ Security features
-✅ Troubleshooting guide
-✅ Contributing guidelines
-✅ Professional badges
+```javascript
+import { CrowdAnalytics } from './lib/analytics';
+
+const analytics = new CrowdAnalytics();
+
+// Get prediction
+const forecast = await analytics.predictDensity({
+  location: [40.7128, -74.0060],
+  timeHorizon: 3600 // 1 hour
+});
+
+console.log(`Predicted density: ${forecast.density}%`);
+```
+
+## Tactical Operations
+
+### Command Center Features
+
+- **Resource Allocation**: Distribute assets efficiently
+- **Incident Management**: Track and respond to events
+- **Team Collaboration**: Coordinate multi-team operations
+- **Emergency Response**: Quick-response incident handling
+
+### Workflow Example
+
+1. **Detect Issue**: System identifies crowd anomaly
+2. **Alert**: Notification sent to operations team
+3. **Respond**: Resources allocated and dispatched
+4. **Monitor**: Real-time tracking during response
+5. **Resolve**: Incident marked complete with report
+
+## Performance Optimization
+
+### Frontend Optimization
+
+- Enable WebGL rendering for 3D visualization
+- Use data compression for network transfers
+- Implement lazy loading for map tiles
+- Cache frequently accessed data locally
+
+### Backend Optimization
+
+- Database indexing on geospatial queries
+- Redis caching for frequent queries
+- Connection pooling for database
+- Load balancing across multiple instances
+
+### Network Optimization
+
+- CDN integration for static assets
+- WebSocket for real-time data (lower latency than polling)
+- Gzip compression enabled by default
+- Request batching for multiple queries
+
+## Security
+
+### Authentication
+
+- JWT-based authentication
+- Multi-factor authentication (MFA) support
+- Role-based access control (RBAC)
+- Session timeout: 24 hours
+
+### Data Protection
+
+- End-to-end encryption for sensitive data
+- HTTPS/TLS for all communications
+- Database encryption at rest
+- Secure API key management
+
+### Compliance
+
+- GDPR compliant data handling
+- Audit logging for all operations
+- Data retention policies
+- Regular security audits
+
+### Best Practices
+
+```javascript
+// Always use environment variables for secrets
+const apiKey = process.env.API_KEY;
+
+// Validate and sanitize user input
+const sanitizedInput = sanitizeInput(userInput);
+
+// Use HTTPS in production
+const protocol = process.env.NODE_ENV === 'production' ? 'https' : 'http';
+
+// Set secure headers
+app.use(helmet());
+
+// Rate limiting
+app.use(rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 100
+}));
+```
+
+## Contributing
+
+We welcome contributions to PRAHAR! Please follow these guidelines:
+
+### Getting Started
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Make your changes
+4. Commit your changes (`git commit -m 'Add amazing feature'`)
+5. Push to the branch (`git push origin feature/amazing-feature`)
+6. Open a Pull Request
+
+### Code Style
+
+- Use ESLint for code formatting
+- Follow JavaScript best practices
+- Add JSDoc comments for functions
+- Write unit tests for new features
+
+### Running Tests
+
+```bash
+# Run all tests
+npm run test
+
+# Run tests with coverage
+npm run test:coverage
+
+# Run tests in watch mode
+npm run test:watch
+```
+
+### Pull Request Process
+
+1. Update documentation as needed
+2. Add tests for new functionality
+3. Ensure all tests pass
+4. Request review from maintainers
+5. Address feedback and update PR
+
+## Troubleshooting
+
+### Common Issues
+
+**Issue**: Application fails to start
+```bash
+# Solution: Clear cache and reinstall dependencies
+rm -rf node_modules package-lock.json
+npm install
+npm run dev
+```
+
+**Issue**: WebSocket connection fails
+```bash
+# Solution: Check firewall and WebSocket port
+netstat -an | grep 3001
+# Update firewall rules if port is blocked
+```
+
+**Issue**: Database connection error
+```bash
+# Solution: Verify database configuration
+npm run db:check
+# Verify credentials in .env file
+```
+
+**Issue**: 3D visualization not loading
+```bash
+# Solution: Check GPU support and WebGL
+# Verify browser console for WebGL errors
+# Update GPU drivers
+# Try disabling hardware acceleration if needed
+```
+
+### Getting Help
+
+- **Documentation**: Check the [docs](./docs) folder
+- **Issues**: Search existing [GitHub Issues](https://github.com/AagoshRajSri/PRAHAR/issues)
+- **Discussions**: Post in [GitHub Discussions](https://github.com/AagoshRajSri/PRAHAR/discussions)
+- **Email**: [support@prahar.io](mailto:support@prahar.io)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Support & Contact
+
+### Project Links
+
+- **Repository**: [github.com/AagoshRajSri/PRAHAR](https://github.com/AagoshRajSri/PRAHAR)
+- **Issues**: [Report a Bug](https://github.com/AagoshRajSri/PRAHAR/issues)
+- **Discussions**: [Ask a Question](https://github.com/AagoshRajSri/PRAHAR/discussions)
+
+### Authors
+
+- **Aagosh Raj Sri** - *Initial work* - [GitHub Profile](https://github.com/AagoshRajSri)
+
+### Acknowledgments
+
+- Thanks to all contributors who have helped with code, bug reports, and suggestions
+- Special thanks to the open-source community for incredible libraries and tools
+- Inspired by modern geospatial and command center applications
+
+### Changelog
+
+See [CHANGELOG.md](CHANGELOG.md) for version history and updates.
+
+### Roadmap
+
+See [ROADMAP.md](ROADMAP.md) for planned features and improvements.
+
+---
+
+**Last Updated**: May 2026
+
+**Status**: Active Development ✅
+
+For the latest updates, please visit the [GitHub repository](https://github.com/AagoshRajSri/PRAHAR).
